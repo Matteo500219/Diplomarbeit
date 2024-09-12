@@ -1,1 +1,1 @@
-lol2
+print ("Hello")

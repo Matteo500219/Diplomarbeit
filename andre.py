@@ -1,1 +1,1 @@
-print("Es funktioniert nicht!")
+print("Es funktioniert nicht")

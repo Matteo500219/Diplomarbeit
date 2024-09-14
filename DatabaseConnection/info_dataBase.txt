@@ -2,3 +2,4 @@
 - no XAMPP
 - https://www.w3schools.com/sql/sql_create_db.asp
 - evtl. Aufsetzen Testumgebung fürs Üben
+    Virtuelbox - Windows hosts

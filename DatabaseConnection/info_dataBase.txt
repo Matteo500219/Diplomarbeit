@@ -1,1 +1,2 @@
 - create database by downloading MariaDB and PHP-Admin
+- no XAMPP

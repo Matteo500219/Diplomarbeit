@@ -18,17 +18,40 @@
 	systemctl status Apache2 --> Überprüfung Status Webserver
 	systemctl status mysql --> Überprüfung Status MySQL; enabled wichtig, da so bei jedem Start gleich mit gestartet
 	sudo apt -y install php php-cgi php-mysqli php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql
-	
+    cat /etc/passwd --> zeigt alle users
 
-Alex-Teil
-ServerExViki19!
-- DB Admin User anlegen
-	mysql -u root -p
-	create user 'wuev'@'localhost' IDENTIFIED by 'PASSWORD';
-	GRANT ALL PRIVILIEGES ON *.* TO 'wuev'@'localhost';
+Creating User for Server
+- login as root
+- adduser BENUTZERNAME
+- enter password and other information
+- deleting user: deluser user_name –remove-home
+
+Creating User for MySQL
+- login as root
+- mysql -u root -p
+- CREATE USER 'benutzer'@'localhost' IDENTIFIED BY 'passwort';
+- display all users: select * from mysql.user;
+
+Giving user priviliges
+- for all databases: GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
+- updating priviliges in ram: FLUSH PRIVILEGES;
+- other priviliges:
+        ALL PRIVILEGES : Ein Wildcard für alle Rechte auf das gewählte Datenbankobjekt, mit einem *.* auf alle Datenbanken.
+        CREATE : Erlaubt einem Benutzer, neue Datenbanken zu erstellen
+        DROP : Erlaubt einem Benutzer, Datenbanken zu löschen
+        DELETE : Erlaubt einem Benutzer, einzelne Zeilen in einer Tabelle zu löschen
+        INSERT : Erlaubt einem Benutzer, neue Zeilen in eine Tabelle zu schreiben
+        SELECT : Leseberechtigungen auf eine Datenbank oder Tabelle
+        UPDATE : Erlaubnis, eine Zeile zu aktualisieren
+        GRANT OPTION : Erlaubt einem Benutzer, die Rechte anderer Benutzer zu setzen oder zu widerrufen
+- display grants for user: SHOW GRANTS FOR 'benutzer'@'localhost';
+- delete user from mysql: DROP USER 'benutzer'@'localhost'; FLUSH PRIVILEGES;
 
 Maschine starten
 - zuerst Verbindung WLAN
 - Maschine starten und mit Anmeldedaten anmelden
 - ip a --> herausfinden zugewiesener IP-Adresse
 - IP-Adresse dann im Browser eingeben mit /phpMyAdmin
+
+
+ssh -p 2222 benutzername@IP-Adresse-des-Host-Rechners

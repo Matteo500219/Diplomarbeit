@@ -3,3 +3,27 @@
 - https://www.w3schools.com/sql/sql_create_db.asp
 - evtl. Aufsetzen Testumgebung fürs Üben
     Virtuelbox - Windows hosts
+
+- Abbrechen --> Strg + C
+
+- Install MariaDB on server
+	config server 
+	su root --> login as root user 
+	apt-get install mariadb-server --> installing MariaDB on Server 
+	mysql_secure_installation
+	mysql -u root -p --> user root mit Passwort in MariaDB anmelden
+	exit --> ausloggen MariaDB
+- Installation Webserver PHP MyAdmin --> https://phoenixnap.com/kb/how-to-install-phpmyadmin-on-debian
+	apt-get install apache2 -y --> y für nicht Yes drücken müssen; Apache Webserver	
+	systemctl status Apache2 --> Überprüfung Status Webserver
+	systemctl status mysql --> Überprüfung Status MySQL; enabled wichtig, da so bei jedem Start gleich mit gestartet
+	sudo apt -y install php php-cgi php-mysqli php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql
+	
+
+Alex-Teil
+ServerExViki19!
+- DB Admin User anlegen
+	mysql -u root -p
+	create user 'wuev'@'localhost' IDENTIFIED by 'PASSWORD';
+	GRANT ALL PRIVILIEGES ON *.* TO 'wuev'@'localhost';
+

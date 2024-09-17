@@ -27,3 +27,8 @@ ServerExViki19!
 	create user 'wuev'@'localhost' IDENTIFIED by 'PASSWORD';
 	GRANT ALL PRIVILIEGES ON *.* TO 'wuev'@'localhost';
 
+Maschine starten
+- zuerst Verbindung WLAN
+- Maschine starten und mit Anmeldedaten anmelden
+- ip a --> herausfinden zugewiesener IP-Adresse
+- IP-Adresse dann im Browser eingeben mit /phpMyAdmin

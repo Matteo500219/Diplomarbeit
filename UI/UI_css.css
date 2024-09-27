@@ -1,0 +1,18 @@
+      .header {                     /* Für die Überschrift, Logo, Name & Login - Button */
+            display: flex;
+            align-items: center;    /* Zentriert den Inhalt vertikal */
+            justify-content: left;  /* Bild und Text bleiben linksbündig */
+        }
+
+        .header p {
+            display: inline-flex;   /* Text und Logo auf einer Linie */
+            align-items: center;    /* Vertikal in der Mitte zentrieren */
+        }
+
+        .header img {
+            margin-right: 15px;     /* Abstand zwischen Bild und Text */
+        }
+        sub {                       /* "Admin" - Tiefstellen */
+            font-size: 0.7em;       /* Schriftgröße des tiefgestellten Textes */
+            vertical-align: sub;    /* Verschiebt den Text nach unten */
+        }

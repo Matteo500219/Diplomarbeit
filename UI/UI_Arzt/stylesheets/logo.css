@@ -1,0 +1,25 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 10px;
+    transition-duration: 0.45s;
+}
+
+.logo-text-NARKO {
+    font-size: 32px;
+    font-family: "Quicksand",sans-serif;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.logo-text-admin {
+    align-self: flex-end;
+    font-size: 16px;
+    font-family: "Quicksand",sans-serif;
+    font-weight: bold;
+    vertical-align: sub;
+    margin-bottom: 5px;
+}

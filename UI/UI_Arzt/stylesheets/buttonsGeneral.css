@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+button {
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    font-size: 26px;
+    border-radius: 8px;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-bottom: 35px;
+
+    width: 210px;
+}
+
+.startseite-button {
+        background-color: #2ea8dd;
+}
+.personal-space-button {
+        background-color: #2ea8dd;
+}
+.regeln-button {
+        background-color: #2ea8dd;
+}

@@ -15,6 +15,13 @@ button {
     background-color: #2ea8dd;
 
     width: 210px;
+    height: 50px;
+
+}
+
+button:hover {
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 
@@ -22,21 +29,6 @@ button {
 .startseite-button {
         margin-top: 35px;
 }
-.startseite-button:hover {
-        box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-}
-
-
-.personal-space-button {
-
-}
-.personal-space-button:hover {
-        box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-}
-
-
 
 
 
@@ -45,11 +37,6 @@ button {
 .regeln-button {
         display: inline-block;
 }
-.regeln-button:hover {
-        box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-}
-
 /* Für die zusätzlichen Buttons, die erscheinen, wenn man "Regeln" hovert */
 .button-container {
     display: inline-block;
@@ -59,12 +46,16 @@ button {
 }
 
 .hidden-buttons {
-    display: none;
+    display: flex;
     flex-direction: column;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease, opacity 0.5s ease;
 }
 
 .extra-button {
-    font-size: 15px;
+    font-size: 16px;
     padding: 8px 15px;
     margin-bottom: 15px;
     margin-left: 30px;
@@ -73,21 +64,7 @@ button {
 
 .button-container:hover .hidden-buttons {
       display: flex;
+      flex-direction: column;
+      max-height: 300px;
+      opacity: 1;
 }
-
-
-
-
-
-
-
-.support-button {
-
-}
-.support-button:hover {
-        box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-}
-
-
-

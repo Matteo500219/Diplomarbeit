@@ -1,0 +1,12 @@
+Prozess Chirurgie:
+    Überprüfung Identität --> Speicherung ID in DB?
+    Indikation Eingriff
+    Definition Eingriff --> Zugriff auf OP-Katalog in DB
+        - Abfrage mittels Worteingabe mit Überprüfung gesamter DB oder eingeschränkte Suche (nur Kap., nur Reg, ...)
+    Definition Dringlichkeit
+    Definition Körperseite
+    Aufklärung Eingriff
+    Einwilligung Patient --> Speicherung Einwilligung (mündlich, schriftlich)
+    Anästhesie erforderlich --> ja / nein --> Speicherung
+        - ja --> Planung Anästhesie-Ambulanz --> Saal- und Terminplanung OP
+        - nein --> Saal- und Terminplanung OP

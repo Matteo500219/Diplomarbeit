@@ -1,6 +1,7 @@
 .logo-container {
     display: flex;
     align-items: center;
+    transition-duration: 0.45s;
 }
 
 .logo {

@@ -6,80 +6,85 @@ from mysql.connector import Error
 global con, cur
 tasks = ("all", "first", "last", "specific", "search")
 
-
 # create connection to database
 def conDatabase():
     global con, cur
     con = mysql.connector.connect(
         host="152.89.239.166",
         port="12345",
-        user="conDB-DA",
+        user="conDA-DB",
         password="conDA-DB_2024-25",
         database="DA_LsgKatalog_Stat"
     )
     cur = con.cursor()
-
     # test connection
     try:
         if con.is_connected():
             print("Connected")
-            print()
     except Error as e:
-        print("Error")
-        print()
+        print("Error: " + str(e))
 
 def searchKap(task):
     if task == "all":
-        query = "SELECT * FROM `Kapitel`"     # select all data from kapitel
+        query = "SELECT * FROM `Kapitel`"   # select all data from kapitel
         cur.execute(query)
-        ans = cur.fetchall()        # select all items from table
+        ans = cur.fetchall()    # select all items from table
         for r in ans:
             print(r)
     elif task == "first":
         query = "SELECT * FROM `Kapitel`"
         cur.execute(query)
-        ans = cur.fetchall()[0]     # select first item from table
+        ans = cur.fetchall()[0] # select first item from table
         print(ans)
     elif task == "last":
         query = "SELECT * FROM `Kapitel`"
         cur.execute(query)
         ans = cur.fetchall()[-1]    # select last item from table
         print(ans)
-    elif type(task) == int:         # means specific number (1., 2., ...)
+    elif type(task) == int: # means specific number (1., 2., ...)
         num = int(task)
         query = "SELECT * FROM `Kapitel`"
         cur.execute(query)
         ans = cur.fetchall()[num-1]
         print(ans)
-    else:                           # search for contained term in complete table
+    else:   # search for contained term in complete table
         terms = str(task)
         query = "SELECT * FROM Kapitel WHERE kap_name LIKE %s"
-        cur.execute(query, ('%' + terms + '%',))
+        cur.execute(query, ('%' + terms + '%',))    # terms is bevor or after
         ans = cur.fetchall()
         for r in ans:
             print(r)
 
 def searchReg(task):
-    if task == "all":
+    if task == "all":   # get all items contained in table
         query = "SELECT * FROM `Region`"
         cur.execute(query)
         ans = cur.fetchall()
         for r in ans:
             print(r)
-    if task == "first":
-        query = "SELECT * FROM `Region`"
-        cur.execute(query)
-        ans = cur.fetchall()[0]
-        print(ans)
-    if task == "last":
-        query = "SELECT * FROM `Region`"
-        cur.execute(query)
-        ans = cur.fetchall()[-1]
-        print(ans)
-    if type(task) == int:
-        num = int(task)
-        query = "SELECT * FROM `Region`"
-        cur.execute(query)
-        ans = cur.fetchall()[num - 1]
-        print(ans)
+    if type(task) == int:   # search for all regions of this chapter
+        num = str(task)
+        query = "SELECT * FROM `Region` WHERE kap_id LIKE %s"
+        cur.execute(query, (num,))  # items only contains 1, not 10, 11, ...
+        ans = cur.fetchall()
+        for i in ans:
+            print(i)
+    else:   # means task is a string
+        if task.split(".")[0] == "":    # ['', '01']; .XX
+            exit()
+
+        if type(task) == str:   # search for specific region with .XX
+            reg = int(task.split("."))
+        if type(task) == str:   # search for specific region in chapter (21.01, 22.01, ...)
+            reg = str(task)
+            kap = int(task.split(".")[0])
+            query = "SELECT * FROM `Region` WHERE kap_id = %s AND reg_id = %s"
+            cur.execute(query, (kap, reg))
+            ans = cur.fetchall()
+            if len(ans) == 0:
+                print("Wrong chapter or region")
+            else:
+                for i in ans:
+                    print(i)
+
 

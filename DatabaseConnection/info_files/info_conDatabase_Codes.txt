@@ -1,3 +1,10 @@
+YouTrack:
+    perm:V3VlVjA2.NTEtOA==.wcJJUBLRPnvQAH43jUc8PIYxJCFwuz
+
+User:
+    conDA-DB
+    conDA-DB_2024-25
+
 Database:
     host --> nas.awie.at
     user --> conDB

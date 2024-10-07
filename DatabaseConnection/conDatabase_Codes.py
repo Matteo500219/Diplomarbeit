@@ -11,10 +11,10 @@ tasks = ("all", "first", "last", "specific", "search")
 def conDatabase():
     global con, cur
     con = mysql.connector.connect(
-        host="nas.awie.at",
-        port="8888",
-        user="conDB",
-        password="conDatabase_DA",
+        host="152.89.239.166",
+        port="12345",
+        user="conDB-DA",
+        password="conDA-DB_2024-25",
         database="DA_LsgKatalog_Stat"
     )
     cur = con.cursor()

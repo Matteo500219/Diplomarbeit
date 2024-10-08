@@ -2,3 +2,5 @@ Dieses UI stellt die Benutzeroberfläche unserer App im Web dar.
 
 Wichtige Links:
     https://www.flaticon.com/de/kostenlose-icon-font/winkel-rechts_3916949?related_id=3916949
+
+Wie man die Website resized & auf kleinere Bildschirme anpasst: grid-template-columns: 100 px 1fr; (1 Free Space)
